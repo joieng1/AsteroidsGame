@@ -10,6 +10,7 @@ public void setup()
   for(int i = 0;i<ben.length;i++){
     ben[i]= new Star();
   }
+  frameRate(60);
 }
 public void draw() 
 {
