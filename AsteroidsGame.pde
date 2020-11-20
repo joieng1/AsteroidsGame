@@ -13,13 +13,15 @@ public void setup()
 }
 public void draw() 
 {
-  background(0);
-  bob.move();
-  bob.show();
   noStroke();
+  background(0);
   for(int i = 0; i<ben.length;i++){
     ben[i].show();
   }
+  bob.move();
+  bob.show();
+  
+  
 }
 
 public void keyPressed(){
