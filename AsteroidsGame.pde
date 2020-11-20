@@ -4,7 +4,7 @@ Star [] ben;
 public void setup() 
 {
   size(600,600);
-  background(256);
+  background(0);
   bob.accelerate(0);
   ben = new Star[500];
   for(int i = 0;i<ben.length;i++){
@@ -13,7 +13,7 @@ public void setup()
 }
 public void draw() 
 {
-  background(256);
+  background(0);
   bob.move();
   bob.show();
   noStroke();
