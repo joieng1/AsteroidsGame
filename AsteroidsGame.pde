@@ -6,7 +6,7 @@ public void setup()
 {
   size(600, 600);
   background(0);
-  bob.accelerate(0);
+  bob.accelerate(1);
   ben = new Star[400];
   for (int i = 0; i<ben.length; i++) {
     ben[i]= new Star();
