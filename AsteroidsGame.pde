@@ -34,6 +34,7 @@ public void draw()
     astro.get(i).show();
     if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
       astro.remove(i);
+      x = x - 5;
     }
   }
   for (int i = 0; i<but.size(); i++) {
@@ -48,6 +49,8 @@ public void draw()
         but.get(i).move();
       }
     }
+    fill(200,0,10);
+    text(" Score: " + x, 50, 50);
   }
   if(astro.size() < 5){
     astro.add(new Asteroid());
