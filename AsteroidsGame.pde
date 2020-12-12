@@ -13,7 +13,7 @@ public void setup()
   }
   for (int i = 0; i<11; i++) {
     astro.add(new Asteroid());
-    astro.get(i).accelerate((double)(Math.random()*10)-5);
+    //astro.get(i).accelerate((double)(Math.random()*10)-5);
   }
   frameRate(60);
 }
@@ -53,3 +53,7 @@ public void keyPressed() {
     bob.turn(-10);
   }
 }
+
+
+
+
