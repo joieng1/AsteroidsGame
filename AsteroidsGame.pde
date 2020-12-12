@@ -1,6 +1,8 @@
 Spaceship bob = new Spaceship();
 Star [] ben;
 ArrayList <Asteroid> astro = new ArrayList <Asteroid>(10);
+ArrayList <Bullet> but = new ArrayList <Bullet>();
+int x = 0;
 //your variable declarations here
 public void setup() 
 {
@@ -26,12 +28,29 @@ public void draw()
   }
   bob.move();
   bob.show();
+
   for (int i = 0; i<astro.size(); i++) {
     astro.get(i).move();
     astro.get(i).show();
-    if(dist((float)astro.get(i).getCenterX(), (float)astro.get(i).getCenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
+    if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
       astro.remove(i);
     }
+  }
+  for (int i = 0; i<but.size(); i++) {
+    for (int m = 0; m<astro.size(); m++) {
+      if (dist((float)astro.get(m).getACenterX(), (float)astro.get(m).getACenterY(),(float)but.get(i).getBCenterX(), (float)but.get(i).getBCenterY())<20 +5) {
+        astro.remove(m);
+        but.remove(i);
+        x = x + 10;
+        break;
+      } else {
+        but.get(i).show();
+        but.get(i).move();
+      }
+    }
+  }
+  if(astro.size() < 5){
+    astro.add(new Asteroid());
   }
 }
 
@@ -51,9 +70,7 @@ public void keyPressed() {
     bob.turn(10);
   } else if (key == 'a') {
     bob.turn(-10);
+  } else if ( key == ' ') {
+    but.add(new Bullet(bob));
   }
 }
-
-
-
-
