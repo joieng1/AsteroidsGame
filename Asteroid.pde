@@ -11,6 +11,7 @@ public class Asteroid extends Floater {
     myYspeed = (double)(Math.random()*2);
     myPointDirection = (double)(Math.random()*360);
     rotSpeed = (double)(Math.random()*11)-6;
+    accelerate((double)(Math.random()*10)-5);
   }
   public void move() {
     turn(rotSpeed);
