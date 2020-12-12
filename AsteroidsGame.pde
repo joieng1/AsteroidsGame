@@ -30,16 +30,18 @@ public void draw()
   bob.show();
 
   for (int i = 0; i<astro.size(); i++) {
-    astro.get(i).move();
-    astro.get(i).show();
+
     if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
       astro.remove(i);
       x = x - 5;
+    } else {
+      astro.get(i).move();
+      astro.get(i).show();
     }
   }
   for (int i = 0; i<but.size(); i++) {
     for (int m = 0; m<astro.size(); m++) {
-      if (dist((float)astro.get(m).getACenterX(), (float)astro.get(m).getACenterY(),(float)but.get(i).getBCenterX(), (float)but.get(i).getBCenterY())<20 +5) {
+      if (dist((float)astro.get(m).getACenterX(), (float)astro.get(m).getACenterY(), (float)but.get(i).getBCenterX(), (float)but.get(i).getBCenterY())<20 +5) {
         astro.remove(m);
         but.remove(i);
         x = x + 10;
@@ -49,13 +51,14 @@ public void draw()
         but.get(i).move();
       }
     }
-    fill(200,0,10);
-    text(" Score: " + x, 50, 50);
   }
-  if(astro.size() < 5){
+  fill(200, 0, 10);
+  text(" Score: " + x, 50, 50);
+  if (astro.size() < 5) {
     astro.add(new Asteroid());
   }
 }
+
 
 public void keyPressed() {
   if (key == 'h')
@@ -65,10 +68,10 @@ public void keyPressed() {
     bob.setCenterY((int)(Math.random()*600));
   } else if (key == 'w')
   {
-    bob.accelerate(+2);
+    bob.accelerate(+.2);
   } else if (key == 's')
   {
-    bob.accelerate(-1);
+    bob.accelerate(-.1);
   } else if (key == 'd') {
     bob.turn(10);
   } else if (key == 'a') {
