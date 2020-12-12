@@ -17,16 +17,16 @@ public class Asteroid extends Floater {
     turn(rotSpeed);
     super.move();
   }
-  public void setCenterX(double x) {
+  public void setACenterX(double x) {
     myCenterX = x;
   }
-  public void setCenterY(double y) {
+  public void setACenterY(double y) {
     myCenterY = y;
   }
-  public double getCenterX() {
+  public double getACenterX() {
     return myCenterX;
   }
-  public double getCenterY() {
+  public double getACenterY() {
     return myCenterY;
   }
 }
