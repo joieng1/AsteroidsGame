@@ -68,7 +68,7 @@ public void draw()
         astro.get(i).show();
       }
     }
-    /*for (int i = 0; i<but.size(); i++) {
+    for (int i = 0; i<but.size(); i++) {
       for (int m = 0; m<astro.size(); m++) {
         if (dist((float)astro.get(m).getACenterX(), (float)astro.get(m).getACenterY(), (float)but.get(i).getBCenterX(), (float)but.get(i).getBCenterY())<20 +5) {
           astro.remove(m);
@@ -80,7 +80,7 @@ public void draw()
           but.get(i).move();
         }
       }
-    }*/
+    }
     fill(200, 0, 10);
     text(" Score: " + x, 50, 50);
     if (astro.size() < 5) {
