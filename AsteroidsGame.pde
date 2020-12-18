@@ -58,7 +58,7 @@ public void draw()
     bob.move();
     bob.show();
 
-    for (int i = 0; i<astro.size(); i++) {
+    /*for (int i = 0; i<astro.size(); i++) {
       if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
         astro.remove(i);
         x = x - 5;
@@ -67,7 +67,7 @@ public void draw()
         astro.get(i).move();
         astro.get(i).show();
       }
-    }
+    }*/
     for (int i = 0; i<but.size(); i++) {
       for (int m = 0; m<astro.size(); m++) {
         if (dist((float)astro.get(m).getACenterX(), (float)astro.get(m).getACenterY(), (float)but.get(i).getBCenterX(), (float)but.get(i).getBCenterY())<20 +5) {
