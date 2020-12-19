@@ -1,3 +1,4 @@
+
 Spaceship bob = new Spaceship();
 Star [] ben;
 ArrayList <Asteroid> astro = new ArrayList <Asteroid>(10);
@@ -15,7 +16,7 @@ public void setup()
   for (int i = 0; i<ben.length; i++) {
     ben[i]= new Star();
   }
-  for (int i = 0; i<10; i++) {
+  for (int i = 0; i<11; i++) {
     astro.add(new Asteroid());
   }
   frameRate(60);
@@ -56,16 +57,19 @@ public void draw()
     }
     bob.move();
     bob.show();
-    Asteroid newAs = new Asteroid();
-    for (int i = 0; i<1; i++) {
-      newAs.show();
-      if (dist((float)0.23, (float)0.345, (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
-        
+    
+    if (astro.size() < 5) {
+      astro.add(new Asteroid());
+    }
+    
+    for (int i = 0; i<astro.size(); i++) {
+      if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
+        astro.remove(i);
         x = x - 5;
         hp = hp -1;
       } else {
-        newAs.move();
-        newAs.show();
+        astro.get(i).move();
+        astro.get(i).show();
       }
     }
     for (int i = 0; i<but.size(); i++) {
