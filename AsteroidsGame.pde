@@ -56,16 +56,16 @@ public void draw()
     }
     bob.move();
     bob.show();
-
+    astro.add(new Asteroid());
     for (int i = 0; i<1; i++) {
-      astro.get(0).show();
+      astro.get(i).show();
       if (dist((float)0.23, (float)0.345, (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
         astro.remove(i);
         x = x - 5;
         hp = hp -1;
       } else {
-        astro.get(0).move();
-        astro.get(0).show();
+        astro.get(i).move();
+        astro.get(i).show();
       }
     }
     for (int i = 0; i<but.size(); i++) {
