@@ -58,12 +58,8 @@ public void draw()
     bob.move();
     bob.show();
     
-    if (astro.size() < 5) {
-      astro.add(new Asteroid());
-    }
-    
     for (int i = 0; i<astro.size(); i++) {
-      if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
+      if (dist((float)astro.get(0).getACenterX(), (float)astro.get(0).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
         astro.remove(i);
         x = x - 5;
         hp = hp -1;
