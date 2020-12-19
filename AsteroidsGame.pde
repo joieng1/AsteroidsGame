@@ -16,7 +16,7 @@ public void setup()
   for (int i = 0; i<ben.length; i++) {
     ben[i]= new Star();
   }
-  for (int i = 0; i<11; i++) {
+  for (int i = 0; i<10; i++) {
     astro.add(new Asteroid());
   }
   frameRate(60);
