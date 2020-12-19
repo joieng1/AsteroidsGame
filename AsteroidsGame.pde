@@ -1,7 +1,7 @@
 
 Spaceship bob = new Spaceship();
 Star [] ben;
-ArrayList <Asteroid> astro = new ArrayList <Asteroid>(10);
+ArrayList <Asteroid> astro = new ArrayList <Asteroid>();
 ArrayList <Bullet> but = new ArrayList <Bullet>();
 int x = 0;
 int hp = 3;
