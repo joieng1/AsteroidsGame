@@ -58,7 +58,7 @@ public void draw()
     bob.show();
 
     for (int i = 0; i<1; i++) {
-      astro.get(i).move();
+      astro.get(i).show();
       if (dist((float)0.23, (float)0.345, (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
         astro.remove(i);
         x = x - 5;
