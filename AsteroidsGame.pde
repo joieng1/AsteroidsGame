@@ -59,7 +59,8 @@ public void draw()
     bob.show();
     
     for (int i = 0; i<1; i++) {
-      if (dist((float)astro.get(0).getACenterX(), (float)astro.get(0).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
+      Asteroid newAs = astro.get(0);
+      if (dist((float)newAs.getACenterX(), (float)astro.get(0).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
        
         x = x - 5;
         hp = hp -1;
