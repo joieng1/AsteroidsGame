@@ -57,9 +57,11 @@ public void draw()
     }
     bob.move();
     bob.show();
-
     for (int i = 0; i<astro.size(); i++) {
-      if (dist((float)astro.get(i).getACenterX(), (float)astro.get(i).getACenterY(), (float)bob.getCenterX(), (float)bob.getCenterY())< 20 + 5) {
+      if (dist((float)astro.get(i).getACenterX(), 
+      (float)astro.get(i).getACenterY(), 
+      (float)bob.getCenterX(), 
+      (float)bob.getCenterY())< 20 + 5) {
         astro.remove(i);
         x = x - 5;
         hp = hp -1;
@@ -70,15 +72,18 @@ public void draw()
     }
     for (int i = 0; i<but.size(); i++) {
       for (int m = 0; m<astro.size(); m++) {
-        if (dist((float)astro.get(m).getACenterX(), (float)astro.get(m).getACenterY(), (float)but.get(i).getBCenterX(), (float)but.get(i).getBCenterY())<20 +5) {
-          astro.remove(m);
-          but.remove(i);
-          x = x + 10;
-          break;
-        } else {
-          but.get(i).show();
-          but.get(i).move();
-        }
+        //if (dist((float)astro.get(m).getACenterX(), 
+        //(float)astro.get(m).getACenterY(), 
+        //(float)but.get(i).getBCenterX(), 
+        //(float)but.get(i).getBCenterY())<20 +5) {
+        //  astro.remove(m);
+        //  but.remove(i);
+        //  x = x + 10;
+        //  break;
+        //} else {
+        //  but.get(i).show();
+        //  but.get(i).move();
+        //}
       }
     }
     fill(200, 0, 10);
